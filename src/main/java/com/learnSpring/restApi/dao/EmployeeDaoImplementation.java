@@ -4,6 +4,7 @@ package com.learnSpring.restApi.dao;
 import com.learnSpring.restApi.entity.Employee;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class EmployeeDaoImplementation implements EmployeeDAO{
 
     EntityManager entityManager;
 
+    @Autowired
     public EmployeeDaoImplementation(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
