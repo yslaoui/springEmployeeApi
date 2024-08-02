@@ -1,6 +1,6 @@
 package com.learnSpring.restApi;
 
-import com.learnSpring.restApi.dao.EmployeeDAO;
+import com.learnSpring.restApi.dao.EmployeeRepository;
 import com.learnSpring.restApi.entity.Employee;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,14 +16,14 @@ public class RestApiApplication {
 		SpringApplication.run(RestApiApplication.class, args);
 	}
 	@Bean
-	CommandLineRunner commandLineRunner(EmployeeDAO employeeDAO) {
+	CommandLineRunner commandLineRunner(EmployeeRepository employeeRepository) {
 		return runner -> {
-			getEmployees(employeeDAO);
+			getEmployees(employeeRepository);
 		};
 	}
 
-	public void getEmployees(EmployeeDAO dao) {
-		List<Employee> employees = dao.findAll();
+	public void getEmployees(EmployeeRepository employeeRepository) {
+		List<Employee> employees = employeeRepository.findAll();
 		for (Employee emp: employees) {
 			System.out.println(emp);
 		}

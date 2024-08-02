@@ -1,9 +1,7 @@
 package com.learnSpring.restApi.rest;
 
-import com.learnSpring.restApi.dao.EmployeeDAO;
 import com.learnSpring.restApi.entity.Employee;
 import com.learnSpring.restApi.service.EmployeeService;
-import com.learnSpring.restApi.service.EmployeeServiceImplementation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
