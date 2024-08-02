@@ -2,6 +2,7 @@ package com.learnSpring.restApi.service;
 
 import com.learnSpring.restApi.dao.EmployeeDAO;
 import com.learnSpring.restApi.entity.Employee;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,11 +26,13 @@ public class EmployeeServiceImplementation implements  EmployeeService{
         return this.employeeDAO.findById(id);
     }
 
+    @Transactional
     @Override
     public Employee save(Employee employee) {
         return this.employeeDAO.save(employee);
     }
 
+    @Transactional
     @Override
     public void deleteById(int id) {
         this.employeeDAO.deleteById(id);
