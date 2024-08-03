@@ -19,6 +19,7 @@ public class RestApiApplication {
 	CommandLineRunner commandLineRunner(EmployeeRepository employeeRepository) {
 		return runner -> {
 			getEmployees(employeeRepository);
+			System.out.println("Hi");
 		};
 	}
 

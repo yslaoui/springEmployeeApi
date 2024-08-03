@@ -1,0 +1,7 @@
+[33meedeff1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Implementing all CRUD operations this time with JPA repository
+[33m608c219[m crud operations in rest controller
+[33ma19d04a[m Adding findById, create and delete methods at the DAO and at the service levels
+[33m2fbcce7[m Adding a service layer
+[33m37c08db[m Serving the list of employees in /api/employees
+[33m0cb6963[m Adding DAO and gettig the list of all students
+[33m4b03127[m This is the first commit. Basic Spring initializr template with 4 dependencies (JDBC, mysql driver, web and devtools) and a .sql file to generate a database and tables with data
