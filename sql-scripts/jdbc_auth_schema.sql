@@ -1,6 +1,10 @@
+DROP TABLE IF EXISTS authorities;
+DROP TABLE IF EXISTS users;
+
+
 CREATE TABLE users (
     username VARCHAR(50) COLLATE utf8mb4_unicode_ci NOT NULL PRIMARY KEY,
-    password VARCHAR(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+    password VARCHAR(68) COLLATE utf8mb4_unicode_ci NOT NULL,
     enabled BOOLEAN NOT NULL
 );
 
