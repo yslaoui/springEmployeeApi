@@ -1,6 +1,6 @@
-package com.learnSpring.restApi.service;
+package com.learnSpring.mvcCrud.service;
 
-import com.learnSpring.restApi.entity.Employee;
+import com.learnSpring.mvcCrud.entity.Employee;
 
 import java.util.List;
 

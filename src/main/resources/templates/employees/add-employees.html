@@ -1,0 +1,38 @@
+
+<!--https://github.com/yslaoui/thymeLeafApp/blob/main/src/main/resources/templates/studentform.html-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <h3> Employee Directory </h3>
+    <hr>
+    <p class="h4 mb-4"> Save Employee </p>
+
+    <form th:action="@{/employees/save}" method="POST" th:object="${employee}">
+
+        <input type="text" class="form-control b-4 w-25"
+               placeholder="First Name" th:field="*{firstName}">
+        <br>
+        <input type="text" class="form-control b-4 w-25"
+               placeholder="Last Name"  th:field="*{lastName}">
+        <br>
+        <input type="text" class="form-control b-4 w-25"
+               placeholder="Email"  th:field="*{email}">
+        <br>
+        <button type="submit" value="submit" class=" btn btn-primary"> Submit </button>
+    </form>
+    <hr>
+    <a th:href="@{list}">Back to Main</a>
+    
+</div>
+
+</body>
+</html>

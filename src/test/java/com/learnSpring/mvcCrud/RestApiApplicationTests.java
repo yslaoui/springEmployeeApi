@@ -1,4 +1,4 @@
-package com.learnSpring.restApi;
+package com.learnSpring.mvcCrud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.learnSpring.restApi.entity;
+package com.learnSpring.mvcCrud.entity;
 
 import jakarta.persistence.*;
 

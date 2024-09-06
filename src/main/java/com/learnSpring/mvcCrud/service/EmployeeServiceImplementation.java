@@ -1,7 +1,7 @@
-package com.learnSpring.restApi.service;
+package com.learnSpring.mvcCrud.service;
 
-import com.learnSpring.restApi.dao.EmployeeRepository;
-import com.learnSpring.restApi.entity.Employee;
+import com.learnSpring.mvcCrud.dao.EmployeeRepository;
+import com.learnSpring.mvcCrud.entity.Employee;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 

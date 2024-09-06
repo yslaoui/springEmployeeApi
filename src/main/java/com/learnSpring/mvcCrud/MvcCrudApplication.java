@@ -1,7 +1,7 @@
-package com.learnSpring.restApi;
+package com.learnSpring.mvcCrud;
 
-import com.learnSpring.restApi.dao.EmployeeRepository;
-import com.learnSpring.restApi.entity.Employee;
+import com.learnSpring.mvcCrud.dao.EmployeeRepository;
+import com.learnSpring.mvcCrud.entity.Employee;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Bean;
 import java.util.List;
 
 @SpringBootApplication
-public class RestApiApplication {
+public class MvcCrudApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RestApiApplication.class, args);
+		SpringApplication.run(MvcCrudApplication.class, args);
 	}
 	@Bean
 	CommandLineRunner commandLineRunner(EmployeeRepository employeeRepository) {
