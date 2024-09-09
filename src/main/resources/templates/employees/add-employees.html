@@ -18,6 +18,8 @@
 
     <form th:action="@{/employees/save}" method="POST" th:object="${employee}">
 
+        <input type="hidden" th:field="*{id}">
+        <br>
         <input type="text" class="form-control b-4 w-25"
                placeholder="First Name" th:field="*{firstName}">
         <br>
@@ -31,7 +33,6 @@
     </form>
     <hr>
     <a th:href="@{list}">Back to Main</a>
-    
 </div>
 
 </body>

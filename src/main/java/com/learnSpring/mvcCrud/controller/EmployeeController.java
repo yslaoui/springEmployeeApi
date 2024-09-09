@@ -36,4 +36,12 @@ public class EmployeeController {
         Employee employeeDb = this.employeeService.save(theEmployee);
         return "redirect:/employees/list";
     }
+
+    @GetMapping("/updateEmployee")
+    public String updateEmployee(@RequestParam int employeeId, Model model) {
+        System.out.println("the chosen id is" + employeeId);
+        Employee employee = this.employeeService.findById(employeeId);
+        model.addAttribute(employee);
+        return "employees/add-employees";
+    }
 }
