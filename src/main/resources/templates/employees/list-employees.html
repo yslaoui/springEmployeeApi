@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +17,11 @@
     </div>
 
     <hr>
-    <a th:href="@{/employees/add-employees}" class="btn btn-primary"> Add Employee </a>
+    <p> User:  <span sec:authentication="principal.username"></span></p>
+    <p> Role(s):  <span sec:authentication="principal.authorities"></span></p>
+    <a th:href="@{/employees/add-employees}" class="btn btn-primary">
+        Add Employee
+    </a>
     <br>
     <br>
     <div class="row">

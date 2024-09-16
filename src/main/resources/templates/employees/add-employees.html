@@ -2,7 +2,8 @@
 <!--https://github.com/yslaoui/thymeLeafApp/blob/main/src/main/resources/templates/studentform.html-->
 
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +21,9 @@
     </div>
 
     <hr>
+    <p> User:  <span sec:authentication="principal.username"></span></p>
+    <p> Role(s):  <span sec:authentication="principal.authorities"></span></p>
+
     <p class="h4 mb-4"> Save Employee </p>
 
     <form th:action="@{/employees/save}" method="POST" th:object="${employee}">
