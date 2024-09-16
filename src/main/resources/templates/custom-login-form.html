@@ -20,6 +20,9 @@
                         <div th:if="${param.error}"  class="alert alert-danger">
                             <i> You entered an invalid username / password </i>
                         </div>
+                        <div th:if="${param.logout}" class="alert alert-info">
+                            <i>You have been logged out</i>
+                        </div>
                         <div class="form-group">
                             <label>User Name</label>
                             <input name="username" type="text" class="form-control" placeholder="enter your username"

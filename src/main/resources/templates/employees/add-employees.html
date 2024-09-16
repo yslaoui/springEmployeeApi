@@ -12,7 +12,13 @@
 
 <div class="container mt-5">
 
-    <h3> Employee Directory </h3>
+    <div class="d-flex justify-content-between align-center">
+        <h3> Employee Directory </h3>
+        <form th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+
     <hr>
     <p class="h4 mb-4"> Save Employee </p>
 
