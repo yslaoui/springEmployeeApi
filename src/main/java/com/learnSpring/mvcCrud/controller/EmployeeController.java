@@ -17,6 +17,11 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+    @GetMapping("/home")
+    public String showHome() {
+        return "employees/home.html";
+    }
+
     @GetMapping("/list")
     public String getEmployees(Model model) {
         List<Employee> employees = this.employeeService.findAll();

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1> Employee table </h1>
+        <form th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
+
+    <hr>
+    <p> User:  <span sec:authentication="principal.username"></span></p>
+    <p> Role(s):  <span sec:authentication="principal.authorities"></span></p>
+    <a th:href="@{/employees/list}" class="btn btn-primary"> Employees List </a>
+</div>
+</body>
+</html>

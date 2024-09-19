@@ -33,7 +33,14 @@ public class InMemorySecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws  Exception {
-        http.authorizeHttpRequests(configurer -> configurer.anyRequest().authenticated())
+        http.authorizeHttpRequests(configurer ->
+                        configurer
+                                .requestMatchers("/").hasRole("EMPLOYEE")
+                                .requestMatchers("/employees/list/**").hasRole("MANAGER")
+                                .requestMatchers("/employees/add-employees/**").hasRole("ADMIN")
+                                .requestMatchers("/employees/updateEmployee/**").hasRole("MANAGER")
+                                .requestMatchers("/employees/deleteEmployee/**").hasRole("ADMIN")
+                                .anyRequest().authenticated())
                 .formLogin(form->form.loginPage("/showMyLoginPage")
                         .loginProcessingUrl("/authenticateTheUser")
                         .permitAll()
