@@ -19,7 +19,9 @@
     <hr>
     <p> User:  <span sec:authentication="principal.username"></span></p>
     <p> Role(s):  <span sec:authentication="principal.authorities"></span></p>
-    <a th:href="@{/employees/list}" class="btn btn-primary"> Employees List </a>
+    <div sec:authorize="hasAnyRole('MANAGER', 'ADMIN')">
+        <a th:href="@{/employees/list}" class="btn btn-primary"> Employees List </a>
+    </div>
 </div>
 </body>
 </html>
