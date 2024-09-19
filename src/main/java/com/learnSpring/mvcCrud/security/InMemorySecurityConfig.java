@@ -45,6 +45,10 @@ public class InMemorySecurityConfig {
                         .loginProcessingUrl("/authenticateTheUser")
                         .permitAll()
                 )
+                .exceptionHandling(configurer->
+                        configurer
+                                .accessDeniedPage("/access-denied")
+                )
                 .logout(logout->logout.permitAll());
         ;
         return http.build();
