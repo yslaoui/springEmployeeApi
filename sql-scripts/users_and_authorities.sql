@@ -10,7 +10,7 @@ CREATE TABLE users (
    enabled BOOLEAN NOT NULL
 );
 
-CREATE TABLE authorities (
+CREATE T..sABLE authorities (
    username VARCHAR(50) COLLATE utf8mb4_unicode_ci NOT NULL,
    authority VARCHAR(50) COLLATE utf8mb4_unicode_ci NOT NULL,
    CONSTRAINT fk_authorities_users FOREIGN KEY (username) REFERENCES users(username)
