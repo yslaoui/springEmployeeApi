@@ -43,13 +43,15 @@ public class InMemorySecurityConfig {
                         .requestMatchers("/login", "/logout").permitAll()  // Allow login and logout for everyone
                         .anyRequest().authenticated()
                 )
-                .authenticationProvider(authenticationProvider())
-                .httpBasic(Customizer.withDefaults())
+                .formLogin(form->form.loginPage("/showMyLoginPage")
+                        .loginProcessingUrl("/authenticateTheUser")
+                        .permitAll())
+                .logout(logout->logout.permitAll());
+
+//                .httpBasic(Customizer.withDefaults())
         ;
         return http.build();
     }
-
-
 }
 
 
