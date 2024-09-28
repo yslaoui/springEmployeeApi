@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h1> Registration Form</h1>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/register/processRegistrationForm}"
+                          th:object="${User}"
+                          method="POST">
+
+
+                        <!--username-->
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input th:field="*{userName}" type="text" class="form-control" placeholder="enter your username"
+                                   required>
+                        </div>
+
+                        <div th:if="${#fields.hasErrors('userName')}"  class="alert alert-danger">
+                            <ul>
+                                <li th:each="err : ${#fields.errors('userName')}" th:text="|User name ${err}|"></li>
+                            </ul>
+                        </div>
+
+                        <!--password-->
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input th:field="*{password}" type="password" class="form-control"
+                                   placeholder="enter your password"
+                                   required>
+                        </div>
+
+                        <div th:if="${#fields.hasErrors('password')}" class="alert alert-danger">
+                            <ul>
+                                <li th:each="err : ${#fields.errors('password')}" th:text="'password ' + ${err}"></li>
+                            </ul>
+                        </div>
+
+                        <!--Submit button-->
+                        <button type="submit" class="btn btn-primary btn-block"> Register</button>
+                        <a th:href="@{/}" class="btn btn-secondary btn-block mt-3"  > Back to Login </a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

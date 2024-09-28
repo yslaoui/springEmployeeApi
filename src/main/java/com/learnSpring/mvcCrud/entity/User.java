@@ -1,6 +1,8 @@
 package com.learnSpring.mvcCrud.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,9 +22,13 @@ public class User {
     private Long id;
 
     @Column(name = "username")
+    @NotNull(message = "username is required")
+    @Size(min = 4, message = "username must be at least 4 characters")
     private String userName;
 
     @Column(name = "password")
+    @NotNull(message = "password is required")
+    @Size(min = 6, message = "password must be at least 6 characters")
     private String password;
 
     @Column(name = "enabled")

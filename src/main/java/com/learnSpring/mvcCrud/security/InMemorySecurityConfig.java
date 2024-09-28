@@ -40,7 +40,7 @@ public class InMemorySecurityConfig {
         http
                 .csrf(csrf->csrf.disable())  // Disable CSRF for APIs
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers("/login", "/logout").permitAll()  // Allow login and logout for everyone
+                        .requestMatchers("/login", "/logout", "/register/**").permitAll()  // Allow login and logout for everyone
                         .anyRequest().authenticated()
                 )
                 .formLogin(form->form.loginPage("/showMyLoginPage")
